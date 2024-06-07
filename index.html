@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moye Moye</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="side-image left">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi9EeB1VUbWcCz7qhhoMw9gVLlN_wpV6CrjA&s" alt="Left Image">
+    </div>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Moye Moye</h1>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <div class="message bot">
+                <div class="avatar">
+                    <img src="https://www.livemint.com/lm-img/img/2024/04/13/600x338/Narendra_Modi_I_1712853266137_1712995190796.jpg" alt="Bot Avatar">
+                </div>
+                <div class="text">
+                    Pucho Ronaldo Bhai
+                </div>
+            </div>
+        </div>
+        <div class="input-box">
+            <form id="chat-form">
+                <input type="text" id="user-input" placeholder="Send a message..." autocomplete="off" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="side-image right">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIee2OEFo2vvNwjyt0bOffYkY-bRNF3eQBAw&s" alt="Right Image">
+    </div>
+
+    <script>
+        document.getElementById('chat-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const userInput = document.getElementById('user-input').value;
+            addMessage(userInput, 'user');
+            document.getElementById('user-input').value = '';
+            setTimeout(() => {
+                window.open("https://youtu.be/IK1lNYGD2oc?feature=shared", "_blank");
+            }, 1000);
+        });
+
+        function addMessage(text, sender) {
+            const chatBox = document.getElementById('chat-box');
+            const message = document.createElement('div');
+            message.classList.add('message', sender);
+            const avatar = document.createElement('div');
+            avatar.classList.add('avatar');
+            const img = document.createElement('img');
+            img.src = sender === 'user' 
+                ? 'https://b.fssta.com/uploads/application/soccer/headshots/885.png' 
+                : 'https://www.livemint.com/lm-img/img/2024/04/13/600x338/Narendra_Modi_I_1712853266137_1712995190796.jpg';
+            img.alt = `${sender.charAt(0).toUpperCase() + sender.slice(1)} Avatar`;
+            avatar.appendChild(img);
+            const messageText = document.createElement('div');
+            messageText.classList.add('text');
+            messageText.textContent = text;
+            message.appendChild(avatar);
+            message.appendChild(messageText);
+            chatBox.appendChild(message);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>

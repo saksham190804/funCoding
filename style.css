@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #343541;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.side-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #343541;
+}
+
+.side-image img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.side-image.left {
+    left: 0;
+}
+
+.side-image.right {
+    right: 0;
+}
+
+.chat-container {
+    background-color: #40414f;
+    width: 600px;
+    height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 200px; /* Adjust to the width of side images */
+}
+
+.chat-header {
+    background-color: #202123;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+}
+
+.message.user .text {
+    background-color: #0b93f6;
+    color: white;
+}
+
+.message.bot .text {
+    background-color: #e5e5ea;
+    color: black;
+}
+
+.message .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.message .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.message .text {
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+.input-box {
+    display: flex;
+    padding: 20px;
+    background-color: #202123;
+    border-top: 1px solid #2a2b32;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 10px;
+    outline: none;
+    background-color: #40414f;
+    color: white;
+}
+
+button {
+    padding: 15px 20px;
+    border: none;
+    background-color: #10a37f;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0e8a65;
+}
